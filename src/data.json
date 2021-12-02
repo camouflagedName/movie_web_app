@@ -1,0 +1,35 @@
+[
+    {
+    "title": "Dune",
+    "year": "2021",
+    "time": "2hr",
+    "rating": "PG-13",
+    "cast": ["Tim C", "Zendaya"],
+    "director": "Dennis Villenueve",
+    "image": "dune_poster.jpg", 
+    "synopsis": "Lots of sand and worms."
+    },
+
+    {
+    "title": "James Bond",
+    "year": "2019",
+    "time": "1hr 30min",
+    "rating": "PG",
+    "cast": ["Daniel Craig", "Rami Malek"],
+    "director": "Cary Joji Fukunaga",
+    "image": "bond_poster.jpg",
+    "synopsis": "He's back. And he wants a martini."
+    },
+
+    {
+    "title": "Avatar",
+    "year": "2011",
+    "time": "3hr",
+    "rating": "PG",
+    "cast": ["blue creatures"],
+    "director": "James Cameron",
+    "image": "avatar.jpeg",
+    "synopsis": "It's not the Titanic."
+    }
+        
+]

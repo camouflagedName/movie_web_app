@@ -11,8 +11,8 @@ export default function MoviePage() {
 
   return (
     <>
-        <Title data={location.state} />
-        <Body data={location.state} />
+      <Title data={location.state} />
+      <Body data={location.state} />
     </>
   );
 }

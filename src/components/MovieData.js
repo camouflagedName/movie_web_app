@@ -16,10 +16,11 @@ export function MovieData(props) {
                     runtime: val.time,
                     synopsis: val.synopsis,
                     cast: val.cast.join(", "),
-                    director: val.director
+                    director: val.director,
+                    rating: val.rating
                 }}
             >
-                <div className="card mb-3 col-6 offset-3">
+                <div className="card mb-3 col-6 offset-3 shadow">
                     <div className="row g-0">
                         <div className="col-4">
                             <img className="img-fluid" src={require(`../../public/images/${val.image}`).default} alt="" />

@@ -14,12 +14,20 @@ export default class Test extends React.Component {
     }
 
     handleClick = year => {
-        let filteredMovies = this.state.unfilteredMovieList.filter((movie) => movie.year === year);
-        this.setState({ movieList: filteredMovies })
+        //let filteredMovies = this.state.unfilteredMovieList.filter((movie) => movie.year === year);
+        this.setState((prev) => { 
+            console.log(`click: ${prev}`)
+            return {  movieList: [...this.state.movieList, prev.unfilteredMovieList.filter((movie) => movie.year === year)]  }})
     }
 
     componentDidMount() {
-        this.setState({ movieList: this.state.unfilteredMovieList })
+        this.setState((prev) => { 
+            console.log(prev)
+            return { movieList: prev.unfilteredMovieList }})
+    }
+
+    componentDidUpdate() {
+        this.setState((prev) => { })
     }
 
     render() {
@@ -27,7 +35,7 @@ export default class Test extends React.Component {
                 <Link
                     className="text-decoration-none text-black"
                     key={val.title}
-                    href="/movieInfo"
+                    to="/movieInfo"
                     state={{
                         title: val.title,
                         image: val.image,
@@ -62,9 +70,9 @@ export default class Test extends React.Component {
                             Filter by Year
                         </button>
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a className="dropdown-item" href="/" onClick={() => this.handleClick('2011')}>2011</a></li>
-                            <li><a className="dropdown-item" href="/" onClick={() => this.handleClick("2019")}>2019</a></li>
-                            <li><a className="dropdown-item" href="/" onClick={() => this.handleClick("2021")}>2021</a></li>
+                            <li className="dropdown-item" onClick={() => this.handleClick('2011')}>2011</li>
+                            <li className="dropdown-item" onClick={() => this.handleClick("2019")}>2019</li>
+                            <li className="dropdown-item" onClick={() => this.handleClick("2021")}>2021</li>
                         </ul>
                     </div>
                     {moviesToRender}

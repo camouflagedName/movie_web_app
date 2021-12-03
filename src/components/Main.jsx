@@ -1,21 +1,18 @@
 import { MovieData } from './MovieData'
-import { useEffect, useState } from 'react'
+import { useEffect, useState} from 'react'
 import unfilteredMovieList from '../data.json'
 
 function App() {
-  //const [filteredMovieList, setfilteredMovieList] = useState(null)
+
   const [moviesToRender, setMoviesToRender] = useState(unfilteredMovieList)
-  //const [isFiltered, setIsFiltered] = useState(false)
-  // let moviesToRender = isFiltered ? filteredMovies : unfilteredMovieList
 
   useEffect(() => {
-    console.log(unfilteredMovieList)
     setMoviesToRender(unfilteredMovieList)
   }, [])
 
   const handleClick = year => {
     const filteredMovies = unfilteredMovieList.filter((movie) => movie.year === year);
-    setMoviesToRender(filteredMovies)
+    setMoviesToRender(filteredMovies);
   }
 
   return (
@@ -26,9 +23,9 @@ function App() {
           Filter by Year
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a className="dropdown-item" href="/" onClick={() => handleClick('2011')}>2011</a></li>
-          <li><a className="dropdown-item" href="/" onClick={() => handleClick("2019")}>2019</a></li>
-          <li><a className="dropdown-item" href="/" onClick={() => handleClick("2021")}>2021</a></li>
+          <li className="dropdown-item"  onClick={() => handleClick('2011')}>2011</li>
+          <li className="dropdown-item"  onClick={() => handleClick('2019')}>2019</li>
+          <li className="dropdown-item"  onClick={() => handleClick('2021')}>2021</li>
         </ul>
       </div>
       <MovieData movies={moviesToRender} />

@@ -19,9 +19,9 @@ export function MovieData(props) {
                     director: val.director
                 }}
             >
-                <div className="card mb-3">
+                <div className="card mb-3 col-6 offset-3">
                     <div className="row g-0">
-                        <div className="col-2">
+                        <div className="col-4">
                             <img className="img-fluid" src={require(`../../public/images/${val.image}`).default} alt="" />
                         </div>
                         <div className="col-8">

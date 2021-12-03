@@ -3,7 +3,6 @@ import { useEffect, useState} from 'react'
 import unfilteredMovieList from '../data.json'
 
 function App() {
-
   const [moviesToRender, setMoviesToRender] = useState(unfilteredMovieList)
 
   useEffect(() => {
@@ -23,9 +22,9 @@ function App() {
           Filter by Year
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li className="dropdown-item"  onClick={() => handleClick('2011')}>2011</li>
-          <li className="dropdown-item"  onClick={() => handleClick('2019')}>2019</li>
-          <li className="dropdown-item"  onClick={() => handleClick('2021')}>2021</li>
+          {unfilteredMovieList.map(val => (
+            <li className="dropdown-item"  onClick={() => handleClick(`${val.year}`)}>{val.year}</li>
+          ))}
         </ul>
       </div>
       <MovieData movies={moviesToRender} />
